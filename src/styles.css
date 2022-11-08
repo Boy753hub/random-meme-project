@@ -1,0 +1,22 @@
+/* You can add global styles to this file, and also import other style files */
+
+body {
+    --text-color: rgb(255, 254, 254);
+    --bkg-color: rgb(0, 0, 0);
+  }
+  body.dark-theme {
+    --text-color: rgb(0, 0, 0);
+    --bkg-color: #F0FFFF
+  }
+  
+  body {
+    background: var(--bkg-color);
+  }
+  
+  h1,h2,
+  p {
+    color: var(--text-color);
+  }
+  
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

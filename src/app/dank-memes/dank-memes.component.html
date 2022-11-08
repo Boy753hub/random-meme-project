@@ -1,0 +1,28 @@
+
+<div class="carousel-container">
+   <div *ngIf="loadingService.isLoading | async" class="loader-container">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <table *ngFor="let meme of memes; let i = index" class="table table-striped">
+    <thead class="table-light">
+      <tr >
+        <th ><h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1></th>
+      </tr>
+      
+         <img  src="{{meme.url}}" alt="error"
+                [ngClass]="{'image-active' : selectedIndex === i}">
+          
+    </thead>
+  </table>
+  <button *ngIf="loadingService.isNotLoading | async" class="btn-carousel btn-prev">
+    <i class="fas fa-arrow-circle-left icon-carousel icon-prev"
+    (click)="onPrevClick()"
+    ></i>
+  </button>
+    <button *ngIf="loadingService.isNotLoading | async" class="btn-carousel btn-next">
+      <i class="fas fa-arrow-circle-right icon-carousel icon-next"
+      (click)="onNextClick()"
+      ></i>
+      </button>
+     
+</div>

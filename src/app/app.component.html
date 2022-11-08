@@ -1,0 +1,9 @@
+<h1>random meme project</h1>
+<div class="darkthemeslide"><mat-slide-toggle (click)="toggleDarkTheme()" color="primary" [checked]="savedStatus">Choose Theme</mat-slide-toggle></div>
+
+<!-- <button >Toggle dark theme</button> -->
+<div class="tab">  
+    <div routerLinkActive="active"><button routerLink="/memes">DANK_memes</button></div>
+    <div routerLinkActive="active"><button routerLink="/animememes">anime-memes</button></div>
+</div>
+<router-outlet></router-outlet>

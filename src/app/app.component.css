@@ -1,0 +1,26 @@
+mat-slide-toggle{
+    color: rgb(111, 0, 255);
+}
+.darkthemeslide{
+    right: 5%;
+    position: absolute;
+}
+.tab{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2%;
+}
+button{
+    background-color: rgb(63, 21, 21);
+    color: white;
+    border: 2px 2px 2px 2px white;
+    cursor: pointer;
+    width: 150px;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+
+}
+body{background-color: black;}
+

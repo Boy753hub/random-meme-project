@@ -70,3 +70,33 @@ opacity: 0.5;
   opacity: 0.8;
   z-index: 99;
 }
+@media only screen and (max-width: 700px){
+  .carousel-container{
+    position: relative;
+    margin: auto;
+    text-align: center;
+    width: auto;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 6px 12px #dce1e1;
+  }
+  .carousel-container img {
+    display: none;
+    border-radius: 15px;
+    }
+.carousel-container h1 {
+  display: none;
+}
+.carousel-container img.image-active {
+    display: block;
+    width: 350px;
+    height: 300PX;
+    left: 50%;
+    right: 50%;
+    }
+
+  
+.carousel-container h1.image-active {
+  display: block;
+}
+}

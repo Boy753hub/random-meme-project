@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, DoCheck, Input, OnInit } from '@angular/core';
+import { take } from 'rxjs';
 import { DatabaseService } from '../database.service';
 import { LoaderService } from '../loader/loader.service';
 
@@ -10,15 +11,23 @@ import { LoaderService } from '../loader/loader.service';
 export class AnimeMemesComponent implements OnInit {
 
   constructor(private animememes: DatabaseService,public loadingService:LoaderService) { }
+  numbers = 20
+  //Number = 0
   Animememes: any
+  Animememes2: any
   selectedIndex = 0
   @Input() controls = true;
-
+  gettingdata(){
+    this.animememes.getAnimeMemes().pipe(
+      take(1)
+   ).subscribe((response) =>{
+      this.Animememes = response.memes
+      //this.Number + 15
+    })
+  }
   //here everything is same as in dank memes component but here we get data from diffent api, its same api but we get diffrent data
   ngOnInit(): void {
-    this.animememes.getAnimeMemes().subscribe((response) =>{
-      this.Animememes = response.memes
-    })
+    this.gettingdata()
   }
   onPrevClick(): void{
     if(this.selectedIndex === 0) {
@@ -26,10 +35,21 @@ export class AnimeMemesComponent implements OnInit {
       } else{
       this.selectedIndex--;
     } 
-    if(this.selectedIndex === 9){
-      window.location.reload();
-    }
-
+                    if(this.selectedIndex % this.numbers === 0){
+                      //this.Number + 16
+                      // this.animememes.getAnimeMemes().subscribe((response) =>{
+                      //   this.Animememes2 = response.memes})
+                      this.gettingdata()
+                        for(let meme of this.Animememes){
+                              this.Animememes.push(meme)
+                              this.Animememes.splice(0, 20);
+                              
+                            }
+                            
+                          }
+                          
+                          console.log(this.numbers)
+                          console.log(this.selectedIndex)
   }
   onNextClick():void{
     if(this.selectedIndex === this.Animememes.length - 1) {
@@ -37,9 +57,24 @@ export class AnimeMemesComponent implements OnInit {
       }else{
       this.selectedIndex ++;
     }
-    if(this.selectedIndex === 9){
-      window.location.reload();
-    }
+                    if(this.selectedIndex % this.numbers === 0){
+                      //this.Number + 16
+                      // this.animememes.getAnimeMemes().subscribe((response) =>{
+                      //   this.Animememes2 = response.memes})
+                      this.gettingdata()
+                      for(let meme of this.Animememes){
+                        this.Animememes.push(meme)
+                        
+                       this.Animememes.splice(0, 20);
+                        
+                      }
+                      
+                      
+                    }
+                    console.log(this.Animememes)
+                    console.log(this.numbers)
+                    console.log(this.selectedIndex)
+                    
   }
   
 }

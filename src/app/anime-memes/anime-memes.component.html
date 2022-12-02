@@ -2,14 +2,17 @@
   <div *ngIf="loadingService.isLoading | async" class="loader-container">
     <mat-progress-bar mode="indeterminate"></mat-progress-bar>
   </div>
-    <table *ngFor="let meme of Animememes; let i = index" class="table table-striped">
+    <table  *ngFor="let meme of Animememes; let i = index" >
       <thead class="table-light">
+        
         <tr >
           <th ><h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1></th>
         </tr>
-        
-           <img  src="{{meme.url}}" alt="error"
-                  [ngClass]="{'image-active' : selectedIndex === i}">
+        <tr>
+          <img  src="{{meme.url}}" alt="error"
+          [ngClass]="{'image-active' : selectedIndex === i}">
+
+        </tr>
             
       </thead>
     </table>

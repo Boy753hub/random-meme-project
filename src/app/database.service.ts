@@ -9,19 +9,18 @@ import { response } from './interface/response.interface';
 })
 export class DatabaseService {
   //api links
-  private url = 'https://meme-api.herokuapp.com/gimme'
-  private url2 = 'https://meme-api.herokuapp.com/gimme/animememes'
+  private url = 'https://meme-api.com/gimme'
+  private url2 = 'https://meme-api.com/gimme/animememes'
   constructor(private http: HttpClient) { }
 
  
 
   //fetching data from api links
-  getMemes(size: number = 10): Observable<any>{
-    
+  getMemes(size: number = 20): Observable<any>{
     return this.http.get<any>(`${this.url}/${size}`).pipe(
         map(response => this.processResponse(response)))
   }
-  getAnimeMemes(size: number = 10): Observable<any>{
+  getAnimeMemes(size: number = 20): Observable<any>{
     return this.http.get<any>(`${this.url2}/${size}`).pipe(
         map(response => this.processResponse(response)))
   }

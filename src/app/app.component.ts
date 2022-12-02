@@ -20,7 +20,6 @@ export class AppComponent implements OnInit{
     if(this.savedStatus === 'true'){
       return this.toggleDarkTheme()
     }
-    console.log(this.savedStatus)
   }
 
 }

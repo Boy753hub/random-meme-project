@@ -4,10 +4,11 @@
   </div>
     <table  *ngFor="let meme of Animememes; let i = index" >
       <thead class="table-light">
-        
-        <tr >
-          <th ><h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1></th>
+        <tr>
+          
+          <h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1>
         </tr>
+        
         <tr>
           <img  src="{{meme.url}}" alt="error"
           [ngClass]="{'image-active' : selectedIndex === i}">

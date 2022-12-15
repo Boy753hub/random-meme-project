@@ -6,7 +6,7 @@
   <table *ngFor="let meme of memes; let i = index" class="table table-striped">
     <thead class="table-light">
       <tr >
-        <th ><h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1></th>
+        <h1 [ngClass]="{'image-active' : selectedIndex === i}">{{meme.title}}</h1>
       </tr>
       
          <img  src="{{meme.url}}" alt="error"

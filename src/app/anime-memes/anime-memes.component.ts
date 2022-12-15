@@ -14,13 +14,11 @@ export class AnimeMemesComponent implements OnInit {
   numbers = 20
   //Number = 0
   Animememes: any
-  Animememes2: any
+  Animememes2 = []
   selectedIndex = 0
   @Input() controls = true;
   gettingdata(){
-    this.animememes.getAnimeMemes().pipe(
-      take(1)
-   ).subscribe((response) =>{
+    this.animememes.getAnimeMemes().subscribe((response) =>{
       this.Animememes = response.memes
       //this.Number + 15
     })
@@ -36,16 +34,18 @@ export class AnimeMemesComponent implements OnInit {
       this.selectedIndex--;
     } 
                     if(this.selectedIndex % this.numbers === 0){
-                      //this.Number + 16
-                      // this.animememes.getAnimeMemes().subscribe((response) =>{
-                      //   this.Animememes2 = response.memes})
-                      this.gettingdata()
-                        for(let meme of this.Animememes){
+                      
+                      this.animememes.getAnimeMemes().subscribe((response) =>{
+                        this.Animememes2 = response.memes})
+                     
+                        for(let meme of this.Animememes2){
                               this.Animememes.push(meme)
                               this.Animememes.splice(0, 20);
                               
                             }
-                            
+                            this.Animememes.shift(); // Remove the first item from the array
+                            this.Animememes.unshift(...this.Animememes2); // Add the new items to the beginning of the array
+                        
                           }
                           
                           console.log(this.numbers)
@@ -58,17 +58,17 @@ export class AnimeMemesComponent implements OnInit {
       this.selectedIndex ++;
     }
                     if(this.selectedIndex % this.numbers === 0){
-                      //this.Number + 16
-                      // this.animememes.getAnimeMemes().subscribe((response) =>{
-                      //   this.Animememes2 = response.memes})
-                      this.gettingdata()
-                      for(let meme of this.Animememes){
-                        this.Animememes.push(meme)
-                        
-                       this.Animememes.splice(0, 20);
-                        
-                      }
                       
+                      this.animememes.getAnimeMemes().subscribe((response) =>{
+                      this.Animememes2 = response.memes})
+                      for(let meme of this.Animememes2){
+                      this.Animememes.push(meme)
+                      this.Animememes.splice(0, 20);
+                          
+                      }
+                      this.Animememes.shift(); // Remove the first item from the array
+                      this.Animememes.unshift(...this.Animememes2); // Add the new items to the beginning of the array
+                  
                       
                     }
                     console.log(this.Animememes)

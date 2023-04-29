@@ -71,9 +71,9 @@ export class AnimeMemesComponent implements OnInit {
                   
                       
                     }
-                    console.log(this.Animememes)
-                    console.log(this.numbers)
-                    console.log(this.selectedIndex)
+                    // console.log(this.Animememes)
+                    // console.log(this.numbers)
+                    // console.log(this.selectedIndex)
                     
   }
   

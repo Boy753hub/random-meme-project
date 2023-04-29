@@ -18,7 +18,7 @@ export class DankMemesComponent implements OnInit {
   gettingdata(){
     this.memeslink.getMemes().subscribe((response) =>{
       this.memes = response.memes
-      console.log(this.memes)
+      // console.log(this.memes)
     })
   }
   ngOnInit(): void {
@@ -43,13 +43,13 @@ onPrevClick(): void{
                             this.memes.splice(0, 20);
                             
                           }
-                          this.memes.shift(); // Remove the first item from the array
-                          this.memes.unshift(...this.memes2); // Add the new items to the beginning of the array
+                          this.memes.shift(); 
+                          this.memes.unshift(...this.memes2); 
                       
                         }
                         
-                        console.log(this.numbers)
-                        console.log(this.selectedIndex)
+                        // console.log(this.numbers)
+                        // console.log(this.selectedIndex)
 }
 onNextClick():void{
   if(this.selectedIndex === this.memes.length - 1) {
@@ -66,14 +66,14 @@ onNextClick():void{
                     this.memes.splice(0, 20);
                         
                     }
-                    this.memes.shift(); // Remove the first item from the array
-                    this.memes.unshift(...this.memes2); // Add the new items to the beginning of the array
+                    this.memes.shift(); 
+                    this.memes.unshift(...this.memes2); 
                 
                     
                   }
-                  console.log(this.memes)
-                  console.log(this.numbers)
-                  console.log(this.selectedIndex)
+                  // console.log(this.memes)
+                  // console.log(this.numbers)
+                  // console.log(this.selectedIndex)
                   
 }
 

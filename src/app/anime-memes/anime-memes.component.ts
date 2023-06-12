@@ -50,13 +50,13 @@ export class AnimeMemesComponent implements OnInit {
                           
                           console.log(this.numbers)
                           console.log(this.selectedIndex)
-  }
-  onNextClick():void{
-    if(this.selectedIndex === this.Animememes.length - 1) {
-      this.selectedIndex = 0;
-      }else{
-      this.selectedIndex ++;
-    }
+                        }
+                        onNextClick():void{
+                          if(this.selectedIndex === this.Animememes.length - 1) {
+                            this.selectedIndex = 0;
+                            }else{
+                            this.selectedIndex ++;
+                          }
                     if(this.selectedIndex % this.numbers === 0){
                       
                       this.animememes.getAnimeMemes().subscribe((response) =>{

@@ -10,7 +10,7 @@ import { response } from './interface/response.interface';
 export class DatabaseService {
   //api links
   private url = 'https://meme-api.com/gimme'
-  private url2 = 'https://meme-api.com/gimme/animememes'
+  private url2 = 'https://meme-api.com/gimme/Egirls'
   constructor(private http: HttpClient) { }
 
  

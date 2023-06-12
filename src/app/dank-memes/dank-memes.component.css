@@ -88,8 +88,8 @@ opacity: 0.5;
 }
 .carousel-container img.image-active {
     display: block;
-    width: 350px;
-    height: 300PX;
+    width: 450px;
+    height: 500PX;
     left: 50%;
     right: 50%;
     }

@@ -12,7 +12,6 @@ export class DatabaseService {
  
   //api links
   private url = 'https://meme-api.com/gimme'
-  private url2 = 'https://meme-api.com/gimme/hentai'
   constructor(private http: HttpClient) { }
 
  
@@ -22,11 +21,6 @@ export class DatabaseService {
     return this.http.get<any>(`${this.url}${reddit}/${size}`).pipe(
         map(response => this.processResponse(response)))
   }
-  getAnimeMemes(size: number = 20): Observable<any>{
-    return this.http.get<any>(`${this.url2}/${size}`).pipe(
-        map(response => this.processResponse(response)))
-  }
-  
 //sorting data to get only info that is needed
   private processResponse(response: response) : response {
     return {

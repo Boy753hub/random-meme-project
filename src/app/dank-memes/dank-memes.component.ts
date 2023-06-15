@@ -19,25 +19,30 @@ export class DankMemesComponent implements OnInit {
   memes2 = []
   selectedIndex = 0
   @Input() controls = true;
+  text = ''
   // @Input() search: string = ''
 
 
   gettingdata(){
-    this.memeslink.getMemes(this.numbers, this.reddit).subscribe((response) =>{
+    this.memeslink.getMemes(this.numbers, this.text).subscribe((response) =>{
       this.memes = response.memes
+    }, error => {
+      alert("server error press ok to try again " + error.error.message)
+      this.text = 'memes'
+      location.reload()
     })
   }
   ngOnInit(): void {
-    //getting sorted info from api and putting in memes int
+    // getting sorted info from api and putting in memes int
     // console.log(this.search)
     this.searchService.getString().subscribe(value => {
-      console.log(value)
+      // console.log(value)
       if(value === ''){
         this.gettingdata()
       }
       if(String(value) && value !== ""){
-          let text = '/' + value
-          this.memeslink.getMemes(this.numbers, text).subscribe((response) =>{
+          this.text = '/' + value
+          this.memeslink.getMemes(this.numbers, this.text).subscribe((response) =>{
             this.memes = response.memes
           }, error => {
             alert(error.error.message)

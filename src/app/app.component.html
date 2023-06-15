@@ -3,14 +3,15 @@
 
 <!-- <button >Toggle dark theme</button> -->
 <div class="tab">  
-    <div class="links">
+    <!-- in old code made only two subreddit avilable soo now i dont think i need it anymore -->
+    <!-- <div class="links">
         <div routerLinkActive="active"><button routerLink="/memes" >DANK_memes</button></div>
         <div routerLinkActive="active"><button routerLink="/animememes" >anime-memes</button></div>
-    </div>
+    </div> -->
     <div>
         <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-            <input placeholder="search Subreddit" name="search" ngModel >
+            <input class="search" placeholder="search Subreddit" name="search" ngModel >
         </form>
     </div>
 </div>
-    <router-outlet></router-outlet>
+    <app-dank-memes></app-dank-memes>

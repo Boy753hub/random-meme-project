@@ -48,4 +48,8 @@ body{background-color: black;}
         width: 200px;
     }
 }
-
+.search{
+    width: 20rem;
+    height: 2rem;
+    border-radius: 13px;
+}

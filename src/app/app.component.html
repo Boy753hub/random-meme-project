@@ -3,7 +3,14 @@
 
 <!-- <button >Toggle dark theme</button> -->
 <div class="tab">  
-    <div routerLinkActive="active"><button routerLink="/memes">DANK_memes</button></div>
-    <div routerLinkActive="active"><button routerLink="/animememes">anime-memes</button></div>
+    <div class="links">
+        <div routerLinkActive="active"><button routerLink="/memes" >DANK_memes</button></div>
+        <div routerLinkActive="active"><button routerLink="/animememes" >anime-memes</button></div>
+    </div>
+    <div>
+        <form (ngSubmit)="onSubmit(f)" #f="ngForm">
+            <input placeholder="search Subreddit" name="search" ngModel >
+        </form>
+    </div>
 </div>
     <router-outlet></router-outlet>

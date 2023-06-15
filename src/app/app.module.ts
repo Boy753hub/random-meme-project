@@ -12,6 +12,7 @@ import { InteceptorService } from './loader/inteceptor.service';
 import {MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { InteceptorService2 } from './loader/inteceptor.service 2';
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
+import { FormsModule } from '@angular/forms';
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +27,8 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
     BrowserAnimationsModule,
     MatProgressBarModule,
     MatProgressSpinnerModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    FormsModule
   ],
   providers: [ 
     {provide:HTTP_INTERCEPTORS, useClass: InteceptorService, multi:true},

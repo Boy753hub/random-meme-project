@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { map, Observable, pipe } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { rightmemes } from './interface/rightmemes.interface';
 import { response } from './interface/response.interface';
 
@@ -8,16 +8,18 @@ import { response } from './interface/response.interface';
   providedIn: 'root'
 })
 export class DatabaseService {
+
+ 
   //api links
-  private url = 'https://meme-api.com/gimme/rape_hentai'
+  private url = 'https://meme-api.com/gimme'
   private url2 = 'https://meme-api.com/gimme/futanari'
   constructor(private http: HttpClient) { }
 
  
 
   //fetching data from api links
-  getMemes(size: number = 20): Observable<any>{
-    return this.http.get<any>(`${this.url}/${size}`).pipe(
+  getMemes(size: number, reddit: string): Observable<any>{
+    return this.http.get<any>(`${this.url}${reddit}/${size}`).pipe(
         map(response => this.processResponse(response)))
   }
   getAnimeMemes(size: number = 20): Observable<any>{

@@ -1,5 +1,4 @@
-import { Component, DoCheck, Input, OnInit } from '@angular/core';
-import { take } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { DatabaseService } from '../database.service';
 import { LoaderService } from '../loader/loader.service';
 
